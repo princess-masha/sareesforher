@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://princess-masha.github.io/sareesforher/sitemap.xml
