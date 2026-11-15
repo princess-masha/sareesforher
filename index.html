@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sarees for Her | Curated Single-Piece Hand-Stock Sarees</title>
+  <meta name="description" content="Shop exclusive, single-piece hand-stock sarees in Kanchi cotton, linen, and soft silk. Curated weaves with fast shipping across India." />
+  <link rel="canonical" href="https://princess-masha.github.io/sareesforher/" />
+  
+  <meta property="og:title" content="Sarees for Her | Handpicked Single-Piece Sarees" />
+  <meta property="og:description" content="Exclusive one-of-a-kind hand-stock sarees. Once a piece is sold, it's gone." />
+  <meta property="og:image" content="https://princess-masha.github.io/sareesforher/assets/og-preview.jpg" />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  
+  <style>
+    html { scroll-behavior: smooth; }
+    .brand-maroon { background-color: #6B1D2F; }
+    .brand-maroon-text { color: #6B1D2F; }
+  </style>
+</head>
+<body class="bg-stone-50 text-stone-900 font-sans antialiased">
+  <!-- Top Announcement Bar -->
+  <div class="brand-maroon text-white text-xs sm:text-sm py-2 px-4 text-center tracking-wide">
+    ✨ Single-Piece Hand-Stock Sarees &nbsp;|&nbsp; 🚚 Free Shipping Across India &nbsp;|&nbsp; 💬 Instant WhatsApp Booking
+  </div>
+
+  <!-- Header -->
+  <header class="bg-white border-b border-stone-200 sticky top-0 z-40">
+    <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+      <a href="index.html" class="text-2xl font-serif font-bold brand-maroon-text tracking-tight">
+        Sarees for Her
+      </a>
+      <nav class="hidden md:flex space-x-6 text-sm font-medium text-stone-700">
+        <a href="#catalog" class="hover:text-[#6B1D2F]">Hand-Stock Catalog</a>
+        <a href="#video-request" class="hover:text-[#6B1D2F]">Request Live Video</a>
+        <a href="terms.html" class="hover:text-[#6B1D2F]">Shipping & Returns</a>
+      </nav>
+      <a href="#catalog" class="brand-maroon text-white text-xs sm:text-sm font-semibold px-4 py-2 rounded-md hover:opacity-90 transition">
+        Browse Stock
+      </a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="bg-gradient-to-r from-[#fdf8f5] to-[#f6ebe4] border-b border-stone-200">
+    <div class="max-w-6xl mx-auto px-4 py-12 md:py-16 text-center">
+      <span class="inline-block bg-amber-100 text-amber-900 text-xs font-semibold px-3 py-1 rounded-full mb-3 uppercase tracking-wider">
+        Live Hand-Stock Inventory
+      </span>
+      <h1 class="text-3xl md:text-5xl font-serif font-bold text-stone-900 mb-4 leading-tight">
+        Timeless Weaves, Curated One Piece at a Time
+      </h1>
+      <p class="text-stone-700 max-w-2xl mx-auto text-base md:text-lg mb-6">
+        Every saree in our collection is a single hand-selected piece. No mass restocks—once a drape finds its home, it is marked sold immediately.
+      </p>
+      <a href="#catalog" class="inline-block brand-maroon text-white font-semibold px-7 py-3 rounded-md shadow hover:opacity-95 transition">
+        Explore Available Sarees
+      </a>
+    </div>
+  </section>
+
+  <!-- Catalog Section -->
+  <main id="catalog" class="max-w-6xl mx-auto px-4 py-12">
+    <div class="flex flex-col md:flex-row md:items-center justify-between mb-8 gap-4">
+      <div>
+        <h2 class="text-2xl font-serif font-bold text-stone-900">Latest Hand-Stock Arrivals</h2>
+        <p id="stock-summary" class="text-sm text-stone-600">Loading catalog...</p>
+      </div>
+      <div class="flex flex-wrap gap-2" id="filter-buttons">
+        <button data-filter="all" class="filter-btn active px-4 py-1.5 rounded-full text-sm font-medium bg-[#6B1D2F] text-white">All Sarees</button>
+        <button data-filter="cotton" class="filter-btn px-4 py-1.5 rounded-full text-sm font-medium bg-white border border-stone-300 text-stone-700 hover:bg-stone-100">Kanchi & Cotton</button>
+        <button data-filter="linen" class="filter-btn px-4 py-1.5 rounded-full text-sm font-medium bg-white border border-stone-300 text-stone-700 hover:bg-stone-100">Linen Cotton</button>
+        <button data-filter="silk" class="filter-btn px-4 py-1.5 rounded-full text-sm font-medium bg-white border border-stone-300 text-stone-700 hover:bg-stone-100">Soft Silk</button>
+        <button data-filter="available" class="filter-btn px-4 py-1.5 rounded-full text-sm font-medium bg-emerald-50 border border-emerald-300 text-emerald-800 hover:bg-emerald-100">In Stock Only</button>
+      </div>
+    </div>
+    <div id="saree-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+  </main>
+
+  <!-- Live Video Request Form -->
+  <section id="video-request" class="bg-white border-t border-b border-stone-200 py-12">
+    <div class="max-w-xl mx-auto px-4 text-center">
+      <h2 class="text-2xl font-serif font-bold text-stone-900 mb-2">Want to See the Drape in Daylight?</h2>
+      <p class="text-sm text-stone-600 mb-6">Request a quick 15-second unedited daylight video on WhatsApp before you buy.</p>
+      <form id="callback-form" class="space-y-4 text-left">
+        <input type="text" name="_gotcha" class="hidden" tabindex="-1" autocomplete="off" />
+        <div>
+          <label for="buyer-name" class="block text-xs font-semibold uppercase text-stone-700 mb-1">Your Name *</label>
+          <input type="text" id="buyer-name" required minlength="2" placeholder="e.g., Ananya" class="w-full px-3 py-2 border border-stone-300 rounded-md focus:outline-none focus:border-[#6B1D2F]" />
+        </div>
+        <div>
+          <label for="saree-code" class="block text-xs font-semibold uppercase text-stone-700 mb-1">Saree SKU Code *</label>
+          <input type="text" id="saree-code" required placeholder="e.g., SFH-101" class="w-full px-3 py-2 border border-stone-300 rounded-md focus:outline-none focus:border-[#6B1D2F]" />
+        </div>
+        <button type="submit" class="w-full brand-maroon text-white font-semibold py-2.5 rounded-md hover:opacity-95 transition">
+          Request Daylight Video on WhatsApp
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-stone-900 text-stone-300 py-10 text-sm">
+    <div class="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div>
+        <h3 class="text-white font-serif text-lg font-bold mb-2">Sarees for Her</h3>
+        <p class="text-stone-400 text-xs leading-relaxed">
+          Curated single-piece hand-stock sarees celebrating authentic Indian weaves. Shipped directly from our boutique to your wardrobe.
+        </p>
+      </div>
+      <div>
+        <h4 class="text-white font-semibold mb-2">Store Policies</h4>
+        <ul class="space-y-1.5 text-xs">
+          <li><a href="privacy.html" class="hover:text-white">Privacy Policy</a></li>
+          <li><a href="terms.html" class="hover:text-white">Terms & Conditions</a></li>
+          <li><a href="terms.html#returns" class="hover:text-white">Return & Unboxing Policy</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-white font-semibold mb-2">Direct Support</h4>
+        <p class="text-xs text-stone-400 mb-2">Mon – Sat: 10:00 AM – 7:00 PM IST</p>
+        <a href="https://wa.me/919876543210" target="_blank" rel="noopener" class="inline-block text-emerald-400 hover:underline text-xs font-medium">
+          Chat on WhatsApp →
+        </a>
+      </div>
+    </div>
+    <div class="max-w-6xl mx-auto px-4 mt-8 pt-6 border-t border-stone-800 text-center text-xs text-stone-500">
+      © 2026 Sarees for Her. All Rights Reserved.
+    </div>
+  </footer>
+
+  <!-- Cookie Consent Banner -->
+  <div id="cookie-banner" class="hidden fixed bottom-0 inset-x-0 bg-stone-900 text-white p-4 shadow-lg z-50 border-t border-stone-700">
+    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-xs">
+      <p>We use essential cookies to ensure smooth browsing and measure store traffic. Read our <a href="privacy.html" class="underline text-amber-300">Privacy Policy</a>.</p>
+      <button id="accept-cookies" class="bg-amber-500 text-stone-950 font-semibold px-4 py-1.5 rounded hover:bg-amber-400 whitespace-nowrap">
+        Got it
+      </button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
